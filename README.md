@@ -15,7 +15,7 @@ The web frontend interacts with the Redis `master` API via JavaScript calls.
 
 ### Prerequisites
 
-This example requires a running [Kubernetes](https://kubernetes.io) cluster and you have installed [Helm Classic](https://helm.sh), [Deis Workflow](https://github.com/deis/workflow) and you have an account with [Wercker](http://wercker.com).
+This example requires a running [Kubernetes](https://kubernetes.io) cluster and you have installed [Helm Classic](https://helm.sh), [Deis Workflow](https://github.com/deisthree/workflow) and you have an account with [Wercker](http://wercker.com).
 
 
 -
@@ -24,7 +24,7 @@ This example requires a running [Kubernetes](https://kubernetes.io) cluster and 
 1) We add the remote repo to Helm Classic:
 ```
 $ helmc up
-$ helmc repo add demo-charts https://github.com/deis/demo-charts
+$ helmc repo add demo-charts https://github.com/deisthree/demo-charts
 $ helmc up
 ```
 
@@ -51,7 +51,7 @@ $ deis config:set GET_HOSTS_FROM=env REDIS_MASTER_SERVICE_HOST=redis-master.defa
 
 #### Set Continuous Deployment with [Wercker](http://wercker.com) 
 
-1) Fork the repo `https://github.com/deis/example-guestbook-wercker.git` to your Gihub account
+1) Fork the repo `https://github.com/deisthree/example-guestbook-wercker.git` to your Gihub account
 
 2) Clone the repo:
 
