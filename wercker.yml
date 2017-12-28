@@ -1,8 +1,11 @@
 box: php:5.6-apache
 build:
   steps:
-    - update-packages:
-        packages: php-pear
+    - script:
+        name: pear install,
+        code: |
+          pear channel-discover pear.nrk.io
+          pear install nrk/Predis
     - script:
         name: move artifacts to /var/www/html
         code: mv guestbook.php controllers.js index.html /var/www/html
