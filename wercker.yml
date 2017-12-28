@@ -17,12 +17,8 @@ build:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        repository: $DOCKER_REPO
-        tag: latest # alternatively you can do $WERCKER_GIT_BRANCH or just leave it empty
+        repository: $DOCKER_REPOSITORY
+        registry: https://registry.hub.docker.com/v2/
+        tag: $DOCKER_TAG
         ports: 80
         cmd: apache2-foreground
-  after-steps:
-    - script:
-        name: pull image on remote Deis PaaS
-        code: |
-          curl -H "Authorization: Token $DEIS_TOKEN" -H "Content-Type: application/json" -X POST http://$DEIS_CONTROLLER/v2/apps/gb/builds -d '{"image": "'"$DOCKER_REPO"'"}'
