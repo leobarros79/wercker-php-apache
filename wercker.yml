@@ -1,4 +1,4 @@
-box: php:5-apache
+box: php:5.6-apache
 build:
   steps:
     - install-packages:
