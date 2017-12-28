@@ -1,7 +1,7 @@
 box: php:5.6-apache
 build:
   steps:
-    - install-packages:
+    - update-packages:
         packages: php-pear
     - script:
         name: move artifacts to /var/www/html
