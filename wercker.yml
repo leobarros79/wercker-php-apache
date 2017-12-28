@@ -1,6 +1,8 @@
 box: php:5-apache
 build:
   steps:
+    - install-packages:
+        packages: php-pear
     - script:
         name: move artifacts to /var/www/html
         code: mv guestbook.php controllers.js index.html /var/www/html
